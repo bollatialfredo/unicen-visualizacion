@@ -6,14 +6,12 @@
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <script src="js/jribbble.js"></script>
     <script src="js/bootstrap.js"></script>
-    <script>
-
-    </script>
+    <script src="js/main.js"></script>
     <meta charset="utf-8">
     <meta content="IE=edge" http-equiv="X-UA-Compatible">
     <meta content="width=device-width, initial-scale=1" name="viewport">
 
-    <title>Entrega 1</title>
+    <title>Image Filter</title>
 
     <!-- Bootstrap + Font Awesome + Main CSS -->
     <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
@@ -31,38 +29,25 @@
                     <div class="navbar">
                         <div class="navbar-header">
                             <button class="navbar-toggle collapsed" data-target=".navbar-collapse" data-toggle="collapse" type="button">
-                                <span class="sr-only">Toggle navigation</span> 
-                                <span class="icon-bar"></span> <span class="icon-bar"></span> 
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span> <span class="icon-bar"></span>
                                 <span class="icon-bar"></span>
-                            </button>                            
-                            <a class="navbar-brand" href="#">Alfredo Bollati</a>
+                            </button>
+                            <div id="backButtonConteiner">
+                                <label class="navbar-brand">
+                                    <span aria-hidden="true">Back</span>
+                                </label>
+                            </div>
                         </div>
 
                         <div class="collapse navbar-collapse">
-                            <ul class="nav navbar-nav">
-                                <li>
-                                    <a href="#">About</a>
-                                </li>
-
-                                <li>
-                                    <a href="#">Blog</a>
-                                </li>
-
-                                <li>
-                                    <a href="#">Resume</a>
-                                </li>
-
-                                <li>
-                                    <a href="#">Contact</a>
-                                </li>
-                            </ul>
-
                             <ul class="nav navbar-nav social">
                                 <li><a href="https://github.com/bollatialfredo"> <i class="fa fa-github"></i> </a> </li>
                                 <li><a href="https://www.linkedin.com/in/alfredo-bollati-837468103/"> <i class="fa fa-linkedin"></i> </a></li>
                                 <li><a href="#"> <i class="fa fa-envelope"></i> </a></li>
                             </ul>
                         </div>
+
                         <!-- /.nav-collapse -->
                     </div>
                     <!-- /.navbar -->
@@ -70,35 +55,70 @@
 
                 <div class="row">
                     <div class="col-md-12 col-lg-12">
-                        <h1 class="intro">Entrega Numero 1, filtros a imagenes</h1>
+                        <h1 class="intro"></h1>
+                        <div id="conteiner">
+                            <div id="inputConteiner" class="row flex-container">
+                                <label class="navbar-brand">
+                                    <span aria-hidden="true">Select Image</span>
+                                    <input type="file" id="file-input" style="display:none">
+                                </label>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="row flex-container">
+                                <canvas class="flex-item" id="canvas" width="500" height="300"></canvas>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </header>
 
-            <div class="row grid-list-wrapper no-gutter-space" id="shots"></div>
+            <div class="row grid-list-wrapper no-gutter-space" id="filters">
+                <div class="container">
+                    <div class="filter">
+                        <div id="f-negative" class="row">
+                            <label class="navbar-brand">
+                                <span aria-hidden="true">Negative</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="filter">
+                        <div class="row">
+                            <label class="navbar-brand">
+                                <span aria-hidden="true">Sepia</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="filter">
+                        <div id="f-blancoYNegro" class="row">
+                            <label class="navbar-brand">
+                                <span aria-hidden="true">Black & White</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="filter">
+                        <div id="f-brillo" class="row">
+                            <label class="navbar-brand">
+                                <span aria-hidden="true">Brillo</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="filter">
+                        <div id="resetFilter" class="row">
+                            <label class="navbar-brand">
+                                <span aria-hidden="true">Reset Filters</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
         </div>
     </div>
 
     <footer>
         <div class="container">
             <nav class="nav-footer">
-                <ul>
-                    <li>
-                        <a href="#">About</a>
-                    </li>
-
-                    <li>
-                        <a href="#">Blog</a>
-                    </li>
-
-                    <li>
-                        <a href="#">Resume</a>
-                    </li>
-
-                    <li>
-                        <a href="#">Contact</a>
-                    </li>
-                </ul>
 
                 <ul>
                     <li><a href="#"> <i class="fa fa-github"></i> </a> </li>
@@ -106,11 +126,10 @@
                     <li><a href="#"> <i class="fa fa-envelope"></i> </a></li>
                 </ul>
 
-                <p class="credits text-center">&copy; All Rights Reserved 2015</p>
+                <p class="credits text-center">&copy; All Rights Reserved 2017</p>
             </nav>
         </div>
 
     </footer>
 </body>
-
 </html>

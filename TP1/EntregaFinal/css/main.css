@@ -97,7 +97,7 @@ width: 100%;
 .navbar-nav>li>a:focus{
     background:none;
  }
- 
+
 .social li{
 display: inline-block}
 
@@ -224,7 +224,7 @@ footer {
 .grid-list-wrapper li {
     list-style:none;
 }
- 
+
 
 @media only screen and (min-width: 320px) {
 
@@ -238,13 +238,13 @@ footer {
 .overlay{
 min-height: 90px;
 }
-    
+
 header {
     background:#fff;
     margin:2em 15px;
     padding:20px 30px
 }
-    
+
     .navbar-header{
 margin: 0;
 padding:0;
@@ -365,4 +365,33 @@ header {
     padding:0 0 5em;
     clear:both
 }
+}
+
+.flex-container {
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.row {
+    width: auto;
+}
+.flex-item {
+    padding: 5px;
+    margin: 10px;
+    line-height: 20px;
+    text-align: center;
+}
+.filter{
+    margin: 5px;
+    display: inline-block;
+}
+#canvas{
+
 }
