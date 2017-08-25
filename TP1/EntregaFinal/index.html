@@ -16,7 +16,7 @@
     <!-- Bootstrap + Font Awesome + Main CSS -->
     <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <link href="css/bootstrap.css" rel="stylesheet">
-    <!-- customize this file if needed -->
+    <link rel="icon" href="assets/icon.png">
     <link href="css/main.css" rel="stylesheet">
 
 </head>
@@ -33,10 +33,17 @@
                                 <span class="icon-bar"></span> <span class="icon-bar"></span>
                                 <span class="icon-bar"></span>
                             </button>
-                            <div id="backButtonConteiner">
-                                <label class="navbar-brand">
-                                    <span aria-hidden="true">Back</span>
-                                </label>
+                            <div style="display: inline-flex">
+                                <div id="backButtonConteiner">
+                                    <label class="navbar-brand navbar-brand-op">
+                                        <span aria-hidden="true">Back</span>
+                                    </label>
+                                </div>
+                                <div class="pull-right" id="downloadButtonConteiner">
+                                    <label class="navbar-brand navbar-brand-op">
+                                        <span aria-hidden="true">Download</span>
+                                    </label>
+                                </div>
                             </div>
                         </div>
 
@@ -55,7 +62,6 @@
 
                 <div class="row">
                     <div class="col-md-12 col-lg-12">
-                        <h1 class="intro"></h1>
                         <div id="conteiner">
                             <div id="inputConteiner" class="row flex-container">
                                 <label class="navbar-brand">
@@ -65,53 +71,81 @@
                             </div>
                         </div>
 
+                        <div class="row grid-list-wrapper no-gutter-space" id="filters">
+                            <div class="container">
+                                <div class="filter">
+                                    <div id="f-negative" class="row">
+                                        <label class="navbar-brand">
+                                            <span aria-hidden="true">Negative</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="filter">
+                                    <div id="f-custom" class="row">
+                                        <label class="navbar-brand">
+                                            <span aria-hidden="true">Bloody</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="filter">
+                                    <div id="f-blancoYNegro" class="row">
+                                        <label class="navbar-brand">
+                                            <span aria-hidden="true">Black & White</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="filter">
+                                    <div id="f-brillo" class="row">
+                                        <label class="navbar-brand">
+                                            <span aria-hidden="true">Bright</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="filter">
+                                    <div id="f-blur" class="row">
+                                        <label class="navbar-brand">
+                                            <span aria-hidden="true">Blur</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="filter">
+                                    <div id="f-sharp" class="row">
+                                        <label class="navbar-brand">
+                                            <span aria-hidden="true">Sharp</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="filter">
+                                    <div id="f-border" class="row">
+                                        <label class="navbar-brand">
+                                            <span aria-hidden="true">Border Sharp</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="filter">
+                                    <div id="f-custom-m" class="row">
+                                        <label class="navbar-brand">
+                                            <span aria-hidden="true">Red Distortion</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="filter">
+                                    <div id="resetFilter" class="row">
+                                        <label class="navbar-brand">
+                                            <span aria-hidden="true">Reset Filters</span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
                         <div>
                             <div class="row flex-container">
-                                <canvas class="flex-item" id="canvas" width="500" height="300"></canvas>
+                                <canvas class="flex-item" id="canvas"></canvas>
                             </div>
                         </div>
                     </div>
                 </div>
-
-            <div class="row grid-list-wrapper no-gutter-space" id="filters">
-                <div class="container">
-                    <div class="filter">
-                        <div id="f-negative" class="row">
-                            <label class="navbar-brand">
-                                <span aria-hidden="true">Negative</span>
-                            </label>
-                        </div>
-                    </div>
-                    <div class="filter">
-                        <div class="row">
-                            <label class="navbar-brand">
-                                <span aria-hidden="true">Sepia</span>
-                            </label>
-                        </div>
-                    </div>
-                    <div class="filter">
-                        <div id="f-blancoYNegro" class="row">
-                            <label class="navbar-brand">
-                                <span aria-hidden="true">Black & White</span>
-                            </label>
-                        </div>
-                    </div>
-                    <div class="filter">
-                        <div id="f-brillo" class="row">
-                            <label class="navbar-brand">
-                                <span aria-hidden="true">Brillo</span>
-                            </label>
-                        </div>
-                    </div>
-                    <div class="filter">
-                        <div id="resetFilter" class="row">
-                            <label class="navbar-brand">
-                                <span aria-hidden="true">Reset Filters</span>
-                            </label>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </header>
         </div>
     </div>
@@ -126,7 +160,7 @@
                     <li><a href="#"> <i class="fa fa-envelope"></i> </a></li>
                 </ul>
 
-                <p class="credits text-center">&copy; All Rights Reserved 2017</p>
+                <p class="credits text-center">&copy; Alfredo Bollati - TUDAI</p>
             </nav>
         </div>
 

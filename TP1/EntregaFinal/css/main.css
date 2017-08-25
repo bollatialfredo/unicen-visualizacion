@@ -68,7 +68,14 @@ width: 100%;
     padding:8px 14px 7px;
     font-size:1.3em;
     height:auto;
-    color:#44454b
+    color:#44454b;
+    border-radius: 5px;
+}
+
+.navbar-brand-op{
+  border:2px solid white;
+  color: white;
+  background-color: #44454b;
 }
 
 .navbar-brand:hover {
@@ -392,6 +399,13 @@ header {
     margin: 5px;
     display: inline-block;
 }
-#canvas{
-
+#filters{
+    text-align: center;
+    display: block;
+    margin-bottom: 0px;
+}
+@media (min-width: 768px){
+    .container {
+    width: inherit;
+    }
 }
