@@ -88,6 +88,15 @@ $(function () {
         }
         context.putImageData(imageData, 0, 0);
     }
+    function filtroCustom() {
+        resetFilter();
+        for (var x = 0; x < imageData.width; x++) {
+            for (var y = 0; y < imageData.height; y++) {
+                setPixel(imageData, x, y, (getRed(imageData, x, y) *.675), (getGreen(imageData, x, y) *.275), (getBlue(imageData, x, y) *.375), 255);
+            }
+        }
+        context.putImageData(imageData, 0, 0);
+    }
     function filtroBlancoYNegro() {
         resetFilter();
         for (var x = 0; x < imageData.width; x++) {
@@ -102,52 +111,52 @@ $(function () {
         context.putImageData(imageData, 0, 0);
     }
 
-    // function blur(weights, opaque) {
-    //     resetFilter();
-    //     var side = Math.round(Math.sqrt(weights.length));
-    //     var halfSide = Math.floor(side/2);
-    //     var src = imageData.data;
-    //     var sw = imageData.width;
-    //     var sh = imageData.height;
-    //     // pad output by the convolution matrix
-    //     var w = sw;
-    //     var h = sh;
-    //     var output = context.createImageData(w, h);
-    //     var dst = output.data;
-    //     // go through the destination image pixels
-    //     var alphaFac = opaque ? 1 : 0;
-    //     for (var y=0; y<h; y++) {
-    //       for (var x=0; x<w; x++) {
-    //         var sy = y;
-    //         var sx = x;
-    //         var dstOff = (y*w+x)*4;
-    //         // calculate the weighed sum of the source image pixels that
-    //         // fall under the convolution matrix
-    //         var r=0, g=0, b=0, a=0;
-    //         for (var cy=0; cy<side; cy++) {
-    //           for (var cx=0; cx<side; cx++) {
-    //             var scy = sy + cy - halfSide;
-    //             var scx = sx + cx - halfSide;
-    //             if (scy >= 0 && scy < sh && scx >= 0 && scx < sw) {
-    //               var srcOff = (scy*sw+scx)*4;
-    //               var wt = weights[cy*side+cx];
-    //               r += src[srcOff] * wt;
-    //               g += src[srcOff+1] * wt;
-    //               b += src[srcOff+2] * wt;
-    //               a += src[srcOff+3] * wt;
-    //             }
-    //           }
-    //         }
-    //         dst[dstOff] = r;
-    //         dst[dstOff+1] = g;
-    //         dst[dstOff+2] = b;
-    //         dst[dstOff+3] = a + alphaFac*(255-a);
-    //       }
-    //     }
-    //     console.log(output);
-    //     imageData = output;
-    //     context.putImageData(imageData, 0, 0);
-    //   };
+    function aplicarFiltroMatriz(weights, opaque) {
+        resetFilter();
+        var side = Math.round(Math.sqrt(weights.length));
+        var halfSide = Math.floor(side/2);
+        var src = imageData.data;
+        var sw = imageData.width;
+        var sh = imageData.height;
+        // pad output by the convolution matrix
+        var w = sw;
+        var h = sh;
+        var output = context.createImageData(w, h);
+        var dst = output.data;
+        // go through the destination image pixels
+        var alphaFac = opaque ? 1 : 0;
+        for (var y=0; y<h; y++) {
+          for (var x=0; x<w; x++) {
+            var sy = y;
+            var sx = x;
+            var dstOff = (y*w+x)*4;
+            // calculate the weighed sum of the source image pixels that
+            // fall under the convolution matrix
+            var r=0, g=0, b=0, a=0;
+            for (var cy=0; cy<side; cy++) {
+              for (var cx=0; cx<side; cx++) {
+                var scy = sy + cy - halfSide;
+                var scx = sx + cx - halfSide;
+                if (scy >= 0 && scy < sh && scx >= 0 && scx < sw) {
+                  var srcOff = (scy*sw+scx)*4;
+                  var wt = weights[cy*side+cx];
+                  r += src[srcOff] * wt;
+                  g += src[srcOff+1] * wt;
+                  b += src[srcOff+2] * wt;
+                  a += src[srcOff+3] * wt;
+                }
+              }
+            }
+            dst[dstOff] = r;
+            dst[dstOff+1] = g;
+            dst[dstOff+2] = b;
+            dst[dstOff+3] = a + alphaFac*(255-a);
+          }
+        }
+        console.log(output);
+        imageData = output;
+        context.putImageData(imageData, 0, 0);
+      };
 
     function download(){
         var img = document.createElement("img");
@@ -185,6 +194,24 @@ $(function () {
     });
     $('#f-blancoYNegro').click(function () {
         filtroBlancoYNegro();
+    });
+    $('#f-custom').click(function () {
+        filtroCustom();
+    });
+    $('#f-sharp').click(function () {
+        aplicarFiltroMatriz([0, -1,  0,
+                 -1,  5, -1,
+                 0, -1,  0 ], 0.5);
+    });
+    $('#f-border').click(function () {
+        aplicarFiltroMatriz([1, 1,  1,
+                 1,  0.7, -1,
+                 -1, -1,  -1 ], 0.5);
+    });
+    $('#f-blur').click(function () {
+        aplicarFiltroMatriz([ 1/9, 1/9, 1/9,
+            1/9, 1/9, 1/9,
+            1/9, 1/9, 1/9 ], 0.5);
     });
     $('#resetFilter').click(function () {
         resetFilter();

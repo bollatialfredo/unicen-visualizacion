@@ -392,6 +392,12 @@ header {
     margin: 5px;
     display: inline-block;
 }
-#canvas{
-
+#filters{
+    text-align: center;
+    display: inline-block;
+}
+@media (min-width: 768px){
+    .container {
+    width: inherit;
+    }
 }
