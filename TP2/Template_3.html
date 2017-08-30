@@ -10,10 +10,6 @@
 
 var ctx = document.getElementById("canvas").getContext("2d");
 
-
-// ctx.canvas.onclick = function(){
-// }
-
 ctx.canvas.onmousedown = function(e){
 	var cX = e.clientX;
 	var cY = e.clientY;
@@ -21,6 +17,7 @@ ctx.canvas.onmousedown = function(e){
 	var sY = e.screenY;
 	var val = Math.sqrt(  Math.pow((cX - circulo.posX), 2) + Math.pow((cY - circulo.posY), 2));
 	console.log(val);
+	
 }
 
 function Circle(paramPosX,paramPosY,paramRadio,paramColor){
