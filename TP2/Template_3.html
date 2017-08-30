@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC >
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Template</title>
+</head>
+<canvas id="canvas" width="900" height="600" style="border:#000 solid 1px;" />
+</body>
+<script>
+
+var ctx = document.getElementById("canvas").getContext("2d");
+
+
+// ctx.canvas.onclick = function(){
+// }
+
+ctx.canvas.onmousedown = function(e){
+	var cX = e.clientX;
+	var cY = e.clientY;
+	var sX = e.screenX;
+	var sY = e.screenY;
+	var val = Math.sqrt(  Math.pow((cX - circulo.posX), 2) + Math.pow((cY - circulo.posY), 2));
+	console.log(val);
+}
+
+function Circle(paramPosX,paramPosY,paramRadio,paramColor){
+	this.posX = paramPosX;
+	this.posY = paramPosY;
+	this.radio = paramRadio;
+	this.color = paramColor;
+}
+
+Circle.prototype.draw = function () {
+	ctx.fillStyle = this.color;
+	ctx.beginPath();
+	ctx.arc(this.posX, this.posY, this.radio, 0, Math.PI * 2);
+	ctx.fill();
+	ctx.closePath();
+};
+var circulo = new Circle(200, 200, 100, "#00FF00");
+circulo.draw();
+
+</script>
+</html>
