@@ -4,7 +4,8 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<title>Template</title>
 </head>
-<canvas id="canvas" width="900" height="600" style="border:#000 solid 1px;" />
+<body style="margin: 0px;">
+<canvas id="canvas" width="900" height="600" />
 </body>
 <script>
 
@@ -16,7 +17,7 @@ var y = 50;
 var ctx = document.getElementById("canvas").getContext("2d");
 var canvas = ctx.canvas;
 
-var circulo = new Circle(200, 200, 50, "#00FF00");
+var circulo = new Circle(500, 500, 50, "#00FF00");
 
 Circle.prototype.draw = function () {
 	ctx.fillStyle = this.color;
@@ -61,17 +62,17 @@ function draw() {
 
 function myMove(e){
 	if (dragging){
-		x = e.pageX - canvas.offsetLeft;
-		y = e.pageY - canvas.offsetTop;
+		x = e.clientX - canvas.offsetLeft;
+		y = e.clientY - canvas.offsetTop;
 	}
 }
 
 function myDown(e){
-	if (e.pageX < x + circulo.radio + canvas.offsetLeft && e.pageX > x - circulo.radio +
-		canvas.offsetLeft && e.pageY < y + circulo.radio + canvas.offsetTop &&
-		e.pageY > y - circulo.radio + canvas.offsetTop){
-			x = e.pageX - canvas.offsetLeft;
-			y = e.pageY - canvas.offsetTop;
+	if (e.clientX < x + circulo.radio + canvas.offsetLeft && e.clientX > x - circulo.radio +
+		canvas.offsetLeft && e.clientY < y + circulo.radio + canvas.offsetTop &&
+		e.clientY > y - circulo.radio + canvas.offsetTop){
+			x = e.clientX - canvas.offsetLeft;
+			y = e.clientY - canvas.offsetTop;
 			dragging = true;
 			canvas.onmousemove = myMove;
 		}
@@ -80,8 +81,8 @@ function myDown(e){
 
 	function insideCircle(e){
 		console.log(e);
-		var cX = e.pageX;
-		var cY = e.pageY;
+		var cX = e.clientX;
+		var cY = e.clientY;
 		var val = Math.sqrt(  Math.pow((cX - circulo.posX), 2) + Math.pow((cY - circulo.posY), 2));
 		console.log(val);
 		if(val < circulo.radio)
