@@ -3,11 +3,26 @@
 
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<link rel="stylesheet" href="css/main.css">
+	<link href="css/bootstrap.css" rel="stylesheet">
 	<title>Template</title>
 </head>
 <body style="margin: 0px;">
-<canvas id="canvas" width="900" height="900" />
+	<div class="contenedor">
+		<img src="assets/logo.png" alt="">
+		<div  class="form-group col-xs-2 pull-right myinput">
+			<label for="usr">How many?</label>
+			<select type="select" class="form-control" id="usr">
+				<option value="">3</option>
+				<option value="">4</option>
+				<option value="">5</option>
+				<option value="">6</option>
+			</select>
+		</div>
+	</div>
+	<canvas id="canvas" width="900" height="900" style="border: 5px solid"/>
 </body>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="js/bootstrap.js"></script>
 <script src="js/main.js"></script>
-
 </html>
