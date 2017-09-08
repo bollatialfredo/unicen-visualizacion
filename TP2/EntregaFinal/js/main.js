@@ -7,18 +7,6 @@ var x = 0;
 var y = 0;
 var firstSelected = false;
 
-// function Triangle() {
-
-// }
-
-// Triangle.prototype.draw = function (aX, aY, bX, bY, cX, cY) {
-//   var path = new Path2D();
-//   path.moveTo(aX, aY);
-//   path.lineTo(bX, bY);
-//   path.lineTo(cX, cY);
-//   ctx.fill(path);
-// };
-
 var figurasArray = [];
 var socketsArray = [];
 
@@ -28,19 +16,28 @@ function clearBackground() {
 }
 
 var circulo = new Circle(300, 300, 50, "#00FF00");
-var socketCirculo = new Socket(circulo.posX * 2, circulo.posY, 'white', circulo);
+var socketCirculo = new Socket(circulo.y * 2, circulo.y, 'white', circulo);
 socketsArray.push(socketCirculo);
 var circulo2 = new Circle(200, 200, 40, "#0000FF");
-var socketCirculo2 = new Socket(circulo2.posX * 2, circulo2.posY, 'white', circulo2);
+var socketCirculo2 = new Socket(circulo2.x * 2, circulo2.y, 'white', circulo2);
 socketsArray.push(socketCirculo2);
 var circulo3 = new Circle(100, 100, 60, "#FF0000");
 figurasArray.push(circulo);
 figurasArray.push(circulo2);
 figurasArray.push(circulo3);
-// var triangulo = new Triangle();
-// triangulo.draw(100,100, 120, 80, 140, 100);
+
+
+
+var triangulo = new Triangle(50, 50, 50, 100);
+figurasArray.push(triangulo);
+triangulo.draw(100,100, false);
+var socketTriang2 = new Socket(triangulo.x * 2, triangulo.y, 'white', triangulo);
+socketsArray.push(triangulo);
+
+
+
 figurasArray.forEach(function(fig) {
-  fig.draw(fig.posX, fig.posY);
+  fig.draw(fig.x, fig.y);
 });
 drawContext();
 
