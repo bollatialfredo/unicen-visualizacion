@@ -30,7 +30,7 @@ document.getElementById('botonJugar').onclick = function() {
     var difficulty = select.options[select.selectedIndex].text;
     switch (difficulty) {
         case 'Facil':
-        figAmount = 3;
+        figAmount = 9;
         socketDifficulty = 20;
         break;
         case 'Normal':
@@ -46,7 +46,7 @@ document.getElementById('botonJugar').onclick = function() {
     }
     init();
     console.log(figAmount);
-};
+}();
 
 function restart() {
     contJugar.style.display = 'block';
@@ -62,42 +62,42 @@ function init() {
     clearBackground();
     socketsArray = [];
     figurasArray = [];
-    var triangulo = new Triangle(60, 150, 70, 100);
+    var triangulo = new Triangle(110, 100, 70, 100);
     figurasArray.push(triangulo);
-    var cuadrado = new Sqare(220, 160, 80, 80);
+    var cuadrado = new Sqare(270, 110, 80, 80);
     figurasArray.push(cuadrado);
-    var estrella9 = new Star(420, 115, 30, 45, 9);
+    var estrella9 = new Star(470, 65, 30, 45, 9);
     figurasArray.push(estrella9);
-    var circulo2 = new Circle(130, 240, 40);
+    var circulo2 = new Circle(180, 190, 40);
     figurasArray.push(circulo2);
-    var rectangulo = new Sqare(250, 260, 50, 100);
+    var rectangulo = new Sqare(300, 210, 50, 100);
     figurasArray.push(rectangulo);
-    var estrella6 = new Star(90, 370, 30, 45, 6);
+    var estrella6 = new Star(140, 320, 30, 45, 6);
     figurasArray.push(estrella6);
-    var rombo = new Romb(150, 400, 60, 70);
+    var rombo = new Romb(220, 350, 60, 70);
     figurasArray.push(rombo);
-    var estrella3 = new Star(300, 370, 30, 45, 5);
+    var estrella3 = new Star(370, 320, 30, 45, 5);
     figurasArray.push(estrella3);
-    var rectangulo2 = new Sqare(400, 420, 100, 50);
+    var rectangulo2 = new Sqare(470, 370, 100, 50);
     figurasArray.push(rectangulo2);
 
-    var socketTriang = new Socket(canvas.width - 550, 350, triangulo);
+    var socketTriang = new Socket(730, 350, triangulo);
     socketsArray.push(socketTriang);
-    var socketCuadrado = new Socket(canvas.width - 670, 350, cuadrado);
+    var socketCuadrado = new Socket(880, 350, cuadrado);
     socketsArray.push(socketCuadrado);
-    var socketEstrella2 = new Socket(canvas.width - 600, 160, estrella9);
+    var socketEstrella2 = new Socket(900, 190, estrella9);
     socketsArray.push(socketEstrella2);
-    var socketCirculo2 = new Socket(canvas.width - 300, 310, circulo2);
+    var socketCirculo2 = new Socket(1180, 310, circulo2);
     socketsArray.push(socketCirculo2);
-    var socketRectangulo = new Socket(canvas.width - 500, 100, rectangulo);
+    var socketRectangulo = new Socket(950, 100, rectangulo);
     socketsArray.push(socketRectangulo);
-    var socketEstrella1 = new Socket(canvas.width - 650, 30, estrella6);
+    var socketEstrella1 = new Socket(800, 80, estrella6);
     socketsArray.push(socketEstrella1);
-    var socketRombo = new Socket(canvas.width - 350, 100, rombo);
+    var socketRombo = new Socket(1150, 110, rombo);
     socketsArray.push(socketRombo);
-    var socketEstrella3 = new Socket(canvas.width - 440, 280, estrella3);
+    var socketEstrella3 = new Socket(1060, 310, estrella3);
     socketsArray.push(socketEstrella3);
-    var socketRectangulo2 = new Socket(canvas.width - 450, 240, rectangulo2);
+    var socketRectangulo2 = new Socket(1050, 240, rectangulo2);
     socketsArray.push(socketRectangulo2);
 
     var auxS = [];
