@@ -1,4 +1,4 @@
-function Triangle(x, y, height, width) {
+function Triangle(x, y, height, width, color) {
     this.x = x;
     this.y = y;
     this.height = height;
@@ -6,6 +6,7 @@ function Triangle(x, y, height, width) {
     this.puntos = [];
     this.selected = false;
     this.done = false;
+    this.color = color;
   }
 
   Triangle.prototype.draw = function (x, y, still) {
@@ -14,7 +15,7 @@ function Triangle(x, y, height, width) {
       this.x = x;
     }
     this.puntos = [];
-    switchFillStyles(still);
+    switchFillStyles(still, this.color);
     ctx.beginPath();
     this.addPunto({X: x, Y: y});
     this.addPunto({X: x + this.width, Y:y});

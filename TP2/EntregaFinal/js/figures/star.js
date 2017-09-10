@@ -1,4 +1,4 @@
-function Star(x, y, innerRadius, outerRadius, spikes) {
+function Star(x, y, innerRadius, outerRadius, spikes, color) {
     this.x = x;
     this.y = y;
     this.height = (innerRadius + outerRadius)*2;
@@ -9,6 +9,7 @@ function Star(x, y, innerRadius, outerRadius, spikes) {
     this.spikes = spikes;
     this.center = {};
     this.done = false;
+    this.color = color;
 }
 Star.prototype.draw = function (cx, cy, socket) {
     if (!socket && !this.done) {
@@ -38,7 +39,7 @@ Star.prototype.draw = function (cx, cy, socket) {
     }
     ctx.lineTo(cx, cy - this.outerRadius);
     ctx.closePath();
-    switchFillStyles(socket);
+    switchFillStyles(socket, this.color);
     ctx.stroke();
     ctx.fill();
     ctx.fillStyle = fillColor;

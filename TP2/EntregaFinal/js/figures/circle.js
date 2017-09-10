@@ -1,10 +1,11 @@
-function Circle(paramPosX, paramPosY, paramRadio) {
+function Circle(paramPosX, paramPosY, paramRadio, color) {
   this.x = paramPosX;
   this.y = paramPosY;
   this.radius = paramRadio;
   this.selected = false;
   this.height = paramRadio * 2;
   this.done = false;
+  this.color = color;
 }
 
 Circle.prototype.draw = function (x, y, still) {
@@ -14,7 +15,7 @@ Circle.prototype.draw = function (x, y, still) {
   }
   ctx.beginPath();
   ctx.arc(x, y, this.radius, 0, 2 * Math.PI, false);
-  switchFillStyles(still);
+  switchFillStyles(still, this.color);
   ctx.fill();
   ctx.stroke();
   ctx.closePath();

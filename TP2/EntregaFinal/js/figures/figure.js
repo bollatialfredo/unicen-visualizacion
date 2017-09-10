@@ -10,12 +10,12 @@ function select(fig){
     figurasArray[figurasArray.length - 1] = fig;
     figurasArray[pos] = aux;
 }
-function switchFillStyles(socket){
+function switchFillStyles(socket, color){
     if (socket) {
         ctx.fillStyle = fillSocketColor;
         ctx.strokeStyle = strokeSocketColor;
     } else {
-        ctx.fillStyle = fillColor;
+        ctx.fillStyle = color;
         ctx.strokeStyle = strokeColor;
     }
 }
@@ -24,6 +24,8 @@ function circleDetectClickInside(fig) {
         var val = Math.sqrt(Math.pow((detectX - fig.x), 2) + Math.pow((detectY - fig.y), 2));
         if (val < fig.radius && !firstSelected) {
             select(fig);
+            click.load();
+            click.play();
         }
     }
 }
@@ -35,6 +37,8 @@ function pointsDetectClickInside(fig) {
                 (detectY - fig.puntos[i].Y) / (fig.puntos[j].Y - fig.puntos[i].Y) + fig.puntos[i].X) {
                     if (!firstSelected && fig.x < detectX) {
                         select(fig);
+                        click.load();
+                        click.play();
                     }
                 }
             }

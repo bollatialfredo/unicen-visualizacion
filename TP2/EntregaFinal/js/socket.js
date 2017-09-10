@@ -16,6 +16,9 @@ Socket.prototype.checkIfFigureIsInside = function (fig) {
             drawContext();
             drawFigures();
             fig.done = true;
+            click2.load();
+            click2.play();
+            checkGameEnded();
         }
     }
 };

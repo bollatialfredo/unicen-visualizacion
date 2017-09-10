@@ -1,10 +1,11 @@
-function Romb(x, y, height, width) {
+function Romb(x, y, height, width, color) {
     this.x = x;
     this.y = y;
     this.height = height;
     this.width = width;
     this.puntos = [];
     this.done = false;
+    this.color = color;
   }
   Romb.prototype.draw = function (x, y, still) {
     if (!still && !this.done) {
@@ -12,7 +13,7 @@ function Romb(x, y, height, width) {
       this.x = x;
     }
     this.puntos = [];
-    switchFillStyles(still);
+    switchFillStyles(still, this.color);
     ctx.beginPath();
     this.addPunto({X: x + this.width/2, Y: y + this.height/3});
     this.addPunto({X: x + this.width, Y: y - this.height/2});

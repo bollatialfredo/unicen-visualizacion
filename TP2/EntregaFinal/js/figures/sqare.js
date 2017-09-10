@@ -1,10 +1,11 @@
-function Sqare(x, y, height, width) {
+function Sqare(x, y, height, width, color) {
     this.x = x;
     this.y = y;
     this.height = height;
     this.width = width;
     this.puntos = [];
     this.done = false;
+    this.color = color;
   }
   Sqare.prototype.draw = function (x, y, still) {
     if (!still && !this.done) {
@@ -12,7 +13,7 @@ function Sqare(x, y, height, width) {
       this.x = x;
     }
     this.puntos = [];
-    switchFillStyles(still);
+    switchFillStyles(still, this.color);
     ctx.beginPath();
     this.addPunto({X: x, Y: y});
     this.addPunto({X: x + this.width, Y: y});

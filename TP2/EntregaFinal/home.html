@@ -4,12 +4,20 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<link rel="stylesheet" href="css/main.css">
 	<link href="css/bootstrap.css" rel="stylesheet">
-	<title>Template</title>
+	<link rel="icon" href="assets/logo.png">
+	<title>Shapes</title>
 </head>
 <body style="margin: 0px;">
 	<div class="row">
-		<div class="col-md-2 col-md-offset-5">
-			<a class="darken">
+		<div class="col-md-3 col-md-offset-2">
+          <div id="timer" class="col-md-12">
+                <div class="container">
+                    <span id="minutes"></span><span id="seconds"></span>
+            </div>
+          </div>
+	  </div>
+		<div class="col-md-2">
+			<a id="gps_ring" class="darken">
 				<img title="Inicio" onclick="restart()" src="assets/logo.png" alt="">
 			</a>
 				<div id="formJugar"  class="form-group myinput">
@@ -33,6 +41,7 @@
 <script src="js/figures/sqare.js"></script>
 <script src="js/figures/triangle.js"></script>
 <script src="js/socket.js"></script>
+<script src="js/sounds.js"></script>
 <script src="js/figures/circle.js" charset="utf-8"></script>
 <script src="js/canvas-events.js" charset="utf-8"></script>
 <script src="js/main.js"></script>
