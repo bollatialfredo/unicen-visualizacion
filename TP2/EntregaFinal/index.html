@@ -1,6 +1,5 @@
 <!DOCTYPE html PUBLIC >
 <html xmlns="http://www.w3.org/1999/xhtml">
-
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<link rel="stylesheet" href="css/main.css">
@@ -8,25 +7,33 @@
 	<title>Template</title>
 </head>
 <body style="margin: 0px;">
-	<div class="contenedor">
-		<img src="assets/logo.png" alt="">
-		<div  class="form-group col-xs-2 pull-right myinput">
-			<label for="usr">How many?</label>
-			<select type="select" class="form-control" id="usr">
-				<option value="">3</option>
-				<option value="">4</option>
-				<option value="">5</option>
-				<option value="">6</option>
-			</select>
-		</div>
+	<div class="row">
+		<div class="col-md-2 col-md-offset-5">
+			<a class="darken">
+				<img title="Inicio" onclick="restart()" src="assets/logo.png" alt="">
+			</a>
+				<div id="formJugar"  class="form-group myinput">
+					<label for="usr">Dificultad</label>
+					<select type="select" class="form-control" id="usr">
+						<option value="">Facil</option>
+						<option value="">Normal</option>
+						<option value="">Dificil</option>
+					</select>
+					<button class="btn btn-primary" type="button" id="botonJugar">JUGAR!</button>
+				</div>
+			</div>
 	</div>
-	<canvas id="canvas" width="900" height="900" style="border: 5px solid"/>
+	<canvas style="display: none;" id="canvas" width="900" height="900"/>
 </body>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <script src="js/bootstrap.js"></script>
-<script src="js/triangle.js"></script>
-<script src="js/circle.js" charset="utf-8"></script>
-<script src="js/main.js"></script>
-<script src="js/canvas-events.js" charset="utf-8"></script>
 <script src="js/figure.js"></script>
+<script src="js/romb.js"></script>
+<script src="js/star.js"></script>
+<script src="js/sqare.js"></script>
+<script src="js/triangle.js"></script>
+<script src="js/socket.js"></script>
+<script src="js/circle.js" charset="utf-8"></script>
+<script src="js/canvas-events.js" charset="utf-8"></script>
+<script src="js/main.js"></script>
 </html>

@@ -3,17 +3,56 @@ body{
     overflow: hidden;
 }
 .contenedor{
-    height: 200px;
+    height: 300px;
     background-color: black;
 }
 .header{
     color: white;
 }
+button{
+    margin-top: 25px !important;
+}
+select{
+    margin-top: 15px !important;
+}
 .myinput{
-    margin-top: 3%;
-    margin-right: 3%;
+    text-align: center;
     color: white;
+    margin-left: auto;
+    margin-top: 80px;
+}
+.center{
+    margin: auto;
+    width: 200px;
 }
 img{
-    margin-left: 40%;
+    height: 200px;
+    width: 200px;
+    margin: auto;
+}
+a.darken {
+    display: inline-block;
+    padding: 0;
+}
+
+a.darken img {
+    display: block;
+    opacity: 0.5;
+    -webkit-transition: all 0.5s linear;
+       -moz-transition: all 0.5s linear;
+        -ms-transition: all 0.5s linear;
+         -o-transition: all 0.5s linear;
+            transition: all 0.5s linear;
+}
+
+a.darken:hover img {
+    opacity: 1;
+}
+#canvas {
+    position: absolute;
+    top:200;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin:auto;
 }
