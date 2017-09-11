@@ -3,7 +3,7 @@ function Circle(paramPosX, paramPosY, paramRadio, color) {
   this.y = paramPosY;
   this.radius = paramRadio;
   this.selected = false;
-  this.height = paramRadio * 2;
+  this.height = paramRadio * 2; 
   this.done = false;
   this.color = color;
 }
