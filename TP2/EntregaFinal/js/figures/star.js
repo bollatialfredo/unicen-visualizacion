@@ -39,7 +39,7 @@ Star.prototype.draw = function (cx, cy, socket) {
     }
     ctx.lineTo(cx, cy - this.outerRadius);
     ctx.closePath();
-    switchFillStyles(socket, this.color);
+    switchFillStyles(socket, this.color, this.done);
     ctx.stroke();
     ctx.fill();
     ctx.fillStyle = fillColor;

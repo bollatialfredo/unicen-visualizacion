@@ -1,5 +1,5 @@
 body{
-    background-image: url("../assets/background.jpg");
+    background-image: url("../assets/background.png");
     overflow: hidden;
 }
 .contenedor{
@@ -31,7 +31,7 @@ img{
     margin: auto;
 }
 a.darken {
-    display: inline-block;
+    display: flex;
     padding: 0;
 }
 

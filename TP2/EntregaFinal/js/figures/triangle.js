@@ -15,15 +15,15 @@ function Triangle(x, y, height, width, color) {
       this.x = x;
     }
     this.puntos = [];
-    switchFillStyles(still, this.color);
+    switchFillStyles(still, this.color, this.done);
     ctx.beginPath();
     this.addPunto({X: x, Y: y});
     this.addPunto({X: x + this.width, Y:y});
     this.addPunto({X: x + this.width / 2, Y: y - this.height});
     this.addPunto({X: x, Y: y});
     ctx.closePath();
-    ctx.fill();
     ctx.stroke();
+    ctx.fill();
     ctx.fillStyle = fillColor;
   };
 

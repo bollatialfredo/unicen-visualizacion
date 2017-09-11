@@ -13,7 +13,7 @@ function Sqare(x, y, height, width, color) {
       this.x = x;
     }
     this.puntos = [];
-    switchFillStyles(still, this.color);
+    switchFillStyles(still, this.color, this.done);
     ctx.beginPath();
     this.addPunto({X: x, Y: y});
     this.addPunto({X: x + this.width, Y: y});
@@ -21,8 +21,8 @@ function Sqare(x, y, height, width, color) {
     this.addPunto({X: x, Y: y - this.height});
     this.addPunto({X: x, Y: y});
     ctx.closePath();
-    ctx.fill();
     ctx.stroke();
+    ctx.fill();
     ctx.fillStyle = fillColor;
   };
 

@@ -10,10 +10,13 @@ function select(fig){
     figurasArray[figurasArray.length - 1] = fig;
     figurasArray[pos] = aux;
 }
-function switchFillStyles(socket, color){
+function switchFillStyles(socket, color, done){
     if (socket) {
         ctx.fillStyle = fillSocketColor;
         ctx.strokeStyle = strokeSocketColor;
+        if (done) {
+            ctx.strokeStyle = strokeSocketColorDone;
+        }
     } else {
         ctx.fillStyle = color;
         ctx.strokeStyle = strokeColor;

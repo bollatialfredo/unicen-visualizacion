@@ -15,9 +15,9 @@ Circle.prototype.draw = function (x, y, still) {
   }
   ctx.beginPath();
   ctx.arc(x, y, this.radius, 0, 2 * Math.PI, false);
-  switchFillStyles(still, this.color);
-  ctx.fill();
+  switchFillStyles(still, this.color, this.done);
   ctx.stroke();
+  ctx.fill();
   ctx.closePath();
   ctx.fillStyle = fillColor;
   ctx.strokeStyle = strokeColor;
