@@ -41,6 +41,24 @@ setInterval( function(){
 }, 1000);
 
 
+function drawImage(){
+  var image1 = new Image();
+  image1.src = "assets/donald.jpg";
+
+  image1.onload = function(){
+
+      ctx.drawImage(this, 0, 0);
+
+      //var imageData = ctx.getImageData(0, 0, this.width, this.height);
+      // console.log(imageData);
+      // for (var x = 0; x < imageData.widt; x++) {
+      //   for (var y = 0; y < imageData.height; y++) {
+      //     setPixel(imageData, x, y, 255, 255, 255, 255);
+      //   }
+      // }
+}
+}
+
 
 document.getElementById('botonJugar').onclick = function() {
     click3.load();
@@ -69,6 +87,7 @@ document.getElementById('botonJugar').onclick = function() {
 };
 
 function restart() {
+  document.getElementById('win-screen').style.display = 'none';
     sec = 0;
     gameEnd = false;
     gameStart = undefined;
@@ -164,6 +183,8 @@ function checkGameEnded() {
     if (gameEnded) {
         animatedImg.className = "darken gps_ring";
         gameEnd = true;
+        document.getElementById('win-screen').style.display = 'block';
+        canvas.style.display = 'none';
         win.load();
         win.play();
     }

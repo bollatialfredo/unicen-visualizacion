@@ -71,3 +71,16 @@ a.darken:hover img {
     font-size: 60px;
     opacity: 0.6;
 }
+#win-screen{
+  display: none;
+  height: 500px;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+.win-msg {
+  margin-top: 80px;
+  text-align: center;
+  font-size: 30px;
+  letter-spacing: 2px;
+  color: white;
+}

@@ -10,6 +10,7 @@ canvas.onmousedown = function (e) {
 
 canvas.onmousemove = function (e) {
   if (dragging) {
+    canvas.style.cursor = "pointer";
     x += e.movementX;
     y += e.movementY;
     clearBackground();
@@ -25,6 +26,7 @@ canvas.onmousemove = function (e) {
 };
 
 canvas.onmouseup = function (e) {
+  canvas.style.cursor = "";
   dragging = false;
   figurasArray.forEach(function (fig) {
     if (fig.selected) {
