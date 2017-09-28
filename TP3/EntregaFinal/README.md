@@ -1,14 +1,14 @@
-<h1>Trabajo Practico Nª 3 ----- Bollati, Martín</h1>
-
+<h1>Trabajo Practico Nª 3</h1>
+<h2>  Bollati Alfredo, Martín David</h2>
 
 <p>
 En las carpetas de esta sección del repositorio se encuentran todos los archivos con los que se realizó la presentación.
 </p>
 
 
-<h2>
+<h3>
 Informe
-</h2>
+</h3>
 <p>
 
 </p>
