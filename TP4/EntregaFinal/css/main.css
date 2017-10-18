@@ -1,40 +1,5 @@
-.game-background{
-  z-index: -9999;
-  height: 530px;
-width: 768px;
-background: url(../assets/background/layer_07.png) left center;
-background-size: cover;
-}
 
-body{
-  background-color: blue;
-}
-
-.walk {
-  width: 104px;
-  height: 150px;
-  background: url('../assets/walk.png') left center;
-  animation: play 0.8s steps(6) infinite;
-}
-.walk-left {
-  -moz-transform: scaleX(-1);
-  -o-transform: scaleX(-1);
-  -webkit-transform: scaleX(-1);
-  transform: scaleX(-1);
-  filter: FlipH;
-  -ms-filter: "FlipH";
-}
-
-.standing-left {
-  background: url('../assets/stand-l.png');
-  animation: none;
-}
-
-.standing-right {
-  background: url('../assets/stand-r.png');
-  animation: none;
-}
-
-@keyframes play {
-  100% { background-position: -624px; }
+.game-container {
+    width: 1300px;
+    height: 620px;
 }

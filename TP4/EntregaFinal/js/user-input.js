@@ -1,36 +1,45 @@
-let sprite = $('#player');
-console.log(sprite);
+
+var alloedInput = true;
+
+function imagePreload() {
+    var walk = new Image();
+    walk.src = 'assets/walk.png';
+    var die = new Image();
+    die.src = 'assets/dead.png';
+}
+imagePreload();
+
 $(document).keydown(function(e) {
+    if (alloedInput) {
+
   switch(e.which) {
     case 37: // left
-    sprite.addClass('walk-left');
-    sprite.addClass('walk');
-    sprite.removeClass('standing-right');
-    sprite.removeClass('standing-left');
+    alloedInput = false;
+    die();
     break;
 
     case 38: // up
+    alloedInput = false;
+    jump();
     break;
 
-    case 39:
-    sprite.removeClass('walk-left');
-    sprite.addClass('walk');
-    sprite.removeClass('standing-right');
-    sprite.removeClass('standing-left');
+    case 39: // right
+    player.addClass('walk');
+    player.removeClass('standing-right');
     break;
 
     case 40: // down
+    slide();
     break;
 
     default: return; // exit this handler for other keys
+    }
   }
   e.preventDefault(); // prevent the default action (scroll / move caret)
 });
 $(document).keyup(function(e) {
   switch(e.which) {
     case 37: // left
-    sprite.removeClass('walk-left');
-    sprite.addClass('standing-left');
     break;
 
     case 38: // up
@@ -38,8 +47,6 @@ $(document).keyup(function(e) {
     break;
 
     case 39:
-    sprite.removeClass('walk-left');
-    sprite.addClass('standing-right');
 
     break;
 
