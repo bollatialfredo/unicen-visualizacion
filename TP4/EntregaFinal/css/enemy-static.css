@@ -1,0 +1,19 @@
+  .enemy-log {
+    top: 500px;
+    right: -217px;
+    width: 522px;
+    height: 188px;
+    z-index: -9994;
+    position: absolute;
+    -moz-transform: scale(0.25);
+    -o-transform: scale(0.25);
+    -webkit-transform: scale(0.25);
+    transform: scale(0.25);
+    background: url(../assets/misc/log1.png) left center;
+    animation: moveForward 3.8s linear infinite;
+    animation-play-state: running;
+}
+
+@keyframes moveForward {
+    100% { right: 790px; }
+}

@@ -16,11 +16,6 @@ imagePreload();
 $(document).keydown(function(e) {
   switch(e.which) {
     case 37: // left
-    if (allowedInput) {
-      allowedInput = false;
-      die();
-      backgroundMoving(false);
-    }
     break;
 
     case 38: // up
