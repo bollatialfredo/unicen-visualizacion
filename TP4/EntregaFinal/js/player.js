@@ -11,7 +11,7 @@ function die() {
 function jump() {
     player.addClass('jump');
     setTimeout(function(){
-        alloedInput = true;
+        allowedInput = true;
         player.removeClass('jump');
     }, 800);
 }
@@ -19,7 +19,7 @@ function jump() {
 function slide() {
     player.addClass('slide');
     setTimeout(function(){
-        alloedInput = true;
+        allowedInput = true;
         player.removeClass('slide');
     }, 800);
 }

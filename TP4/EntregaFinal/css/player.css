@@ -1,6 +1,6 @@
 
 .idle {
-    top: 224px;
+    top: 300px;
     left: 140px;
     width: 329px;
     height: 496px;
@@ -30,7 +30,7 @@
 }
 
 .die{
-    top: 181px;
+    top: 260px;
     left: 60px;
     width: 598px;
     height: 610px;
@@ -47,7 +47,7 @@
     animation: jump 0.8s steps(10);
 }
 .slide {
-    top: 300px;
+    top: 380px;
     width: 404px;
     height: 399px;
     background: url('../assets/slide.png') left center;
@@ -64,8 +64,8 @@
     100% { background-position: -4250px; }
 }
 @keyframes jump {
-    50% { top: 120px; }
-    100% { background-position: -4170px; top: 191px; }
+    50% { top: 180px; }
+    100% { background-position: -4170px; top: 300px; }
 }
 @keyframes slide {
     100% { background-position: -4040px; }
