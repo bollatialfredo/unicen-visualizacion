@@ -1,3 +1,8 @@
+  .enemy {
+    animation: moveForward 5.3s linear;
+    animation-play-state: paused;
+  }
+
   .enemy-log {
     top: 500px;
     right: -234px;
@@ -10,10 +15,23 @@
     -webkit-transform: scale(0.25);
     transform: scale(0.25);
     background: url(../assets/misc/log1.png) left center;
-    animation: moveForward 5.3s linear infinite;
-    animation-play-state: paused;
 }
+
+.enemy-bat {
+  top: 400px;
+  right: 0px;
+  width: 50px;
+  height: 100px;
+  z-index: -9994;
+  position: absolute;
+  animation-duration: 5s;
+  animation-name: moveForwardBat;
+}
+
 
 @keyframes moveForward {
     100% { right: 790px; }
+}
+@keyframes moveForwardBat {
+    100% { right: 900px; }
 }
