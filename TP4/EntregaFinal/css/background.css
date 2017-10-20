@@ -58,7 +58,7 @@
 .layer-2 {
     z-index: -9994;
     background: url(../assets/background/layer_02_s.png);
-    animation: 15s background-movement linear infinite;
+    animation: 4s background-movement linear infinite;
     animation-play-state: paused;
 }
 .layer-1 {

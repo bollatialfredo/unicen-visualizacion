@@ -54,6 +54,17 @@
     animation: slide 0.8s steps(10);
 }
 
+.erase {
+    animation: erase 1s;
+    animation-timing-function:linear;
+    animation-fill-mode:forwards;
+    animation-iteration-count: 1;
+}
+
+@keyframes erase {
+    100% { opacity: 0; }
+}
+
 @keyframes idle {
     100% { background-position: -3290px; }
 }

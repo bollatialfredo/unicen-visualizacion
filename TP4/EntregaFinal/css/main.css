@@ -3,3 +3,16 @@
     width: 1300px;
     height: 620px;
 }
+.cover-left {
+    height: 800px;
+    background-color: white;
+    width: 633px;
+    margin-left: -505px;
+    position: absolute;
+}
+.cover-right {
+    height: 800px;
+    background-color: white;
+    width: 200px;
+    margin-left: 896px;
+}

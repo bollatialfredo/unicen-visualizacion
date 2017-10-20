@@ -1,6 +1,6 @@
   .enemy-log {
     top: 500px;
-    right: -217px;
+    right: -234px;
     width: 522px;
     height: 188px;
     z-index: -9994;
@@ -10,8 +10,8 @@
     -webkit-transform: scale(0.25);
     transform: scale(0.25);
     background: url(../assets/misc/log1.png) left center;
-    animation: moveForward 3.8s linear infinite;
-    animation-play-state: running;
+    animation: moveForward 5.3s linear infinite;
+    animation-play-state: paused;
 }
 
 @keyframes moveForward {

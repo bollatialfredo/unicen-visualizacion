@@ -30,6 +30,7 @@ $(document).keydown(function(e) {
       player.addClass('walk');
       player.removeClass('standing-right');
       backgroundMoving(true);
+      enemiesMoving(true);
     }
     break;
 
