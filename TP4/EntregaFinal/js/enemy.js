@@ -16,14 +16,12 @@ var enemyLog2 = $('#enemy-log2');
 var enemyBat = $('#enemy-bat');
 
 function initEnemy(enemy) {
-console.log(enemy);
-  if (enemy[0].offsetLeft == 736 || enemy[0].offsetLeft == 972) {
-    console.log("enemy init");
+  if (enemy[0].offsetLeft == 736 || enemy[0].offsetLeft == 902) {
     enemy.removeClass('enemy');
-    enemy.removeClass('enemy-bat');
+    enemy.removeClass('enemy-anim');
     setTimeout(function(){
       if (enemy.selector == '#enemy-bat') {
-          enemy.addClass('enemy-bat');
+          enemy.addClass('enemy-anim');
       }
       enemy.addClass('enemy');
     },100)
@@ -40,11 +38,11 @@ function enemiesIntervals() {
     initEnemy(enemyBat);
   }, getRandomInt(7000, 9000));
 
-  // setTimeout(function () {
-  //   initEnemy(enemyLog2);
-  // }, getRandomInt(4000, 6000));
-  //
-  // setTimeout(function () {
-  //   initEnemy(enemyLog1);
-  // }, getRandomInt(1000, 3000));
+  setTimeout(function () {
+    initEnemy(enemyLog2);
+  }, getRandomInt(4000, 6000));
+  
+  setTimeout(function () {
+    initEnemy(enemyLog1);
+  }, getRandomInt(1000, 3000));
 }

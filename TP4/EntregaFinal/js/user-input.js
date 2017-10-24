@@ -16,6 +16,10 @@ imagePreload();
 $(document).keydown(function(e) {
   switch(e.which) {
     case 37: // left
+    player.addClass('standing-right');
+    player.removeClass('walk');
+    backgroundMoving(false);
+    enemiesMoving(false);
     break;
 
     case 38: // up

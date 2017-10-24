@@ -1,24 +1,35 @@
 var enemies = $('.enemy');
-
+enemies.push($('.enemy-anim')[0]);
 function update() {
   setInterval(function () {
     for (var i = 0; i < enemies.length; i++) {
-      if (enemies[i].offsetLeft > 50 && enemies[i].offsetLeft < 150 && player[0].offsetTop >= 300) {
-        if (enemies[i].id == 'enemy-bat') {
-          console.log("die-bat");
-        }else {
-          console.log("die-log");
+
+      if (enemies[i].id == 'enemy-bat') {
+
+        if (enemies[i].offsetLeft > 210 && enemies[i].offsetLeft < 240 && player[0].offsetTop != 380) {
           console.dir(enemies[i]);
-          // allowedInput = false;
-          // die();
+          console.log("die-bat");
+          allowedInput = false;
+          die();
         }
+
+      } else {
+        if (enemies[i].offsetLeft > 80 && enemies[i].offsetLeft < 115 && player[0].offsetTop >= 300) {
+
+          console.log("die-log");
+
+          allowedInput = false;
+          die();
+        }
+
       }
+
     }
-  }, 200);
+  }, 100);
 }
 
 function getRandomInt(min, max) {
-    return Math.floor(Math.random() * (max - min + 1)) + min;
+  return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
 update();

@@ -18,6 +18,9 @@ function jump() {
     allowedInput = true;
     player.removeClass('jump');
   });
+  setTimeout(function () {
+    console.log(player[0].offsetTop);
+  }, 400);
 }
 
 function slide() {
