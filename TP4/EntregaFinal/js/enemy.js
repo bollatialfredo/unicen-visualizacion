@@ -1,3 +1,6 @@
+var enemies = $('.enemy');
+enemies.push($('.enemy-anim')[0]);
+var bat = $('#enemy-bat');
 
 function enemiesMoving(state) {
   if (state == true) {
@@ -7,6 +10,10 @@ function enemiesMoving(state) {
   }else{
     for (var i = 0; i < enemies.length; i++) {
       enemies[i].style.animationPlayState = 'paused';
+    }
+    bat[0].style.animationPlayState = 'running';
+    if(player.dead && !player.deathByLog){
+      bat.addClass('bat-only-fly');
     }
   }
 }

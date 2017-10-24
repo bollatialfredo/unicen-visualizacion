@@ -6,6 +6,11 @@
     animation: moveForwardBat 3.3s linear, bat-fly 0.5s steps(3) infinite;
     animation-play-state: paused;
   }
+  .bat-only-fly {
+    animation: bat-fly 0.5s steps(3) infinite;  
+    animation-play-state: running;  
+    right: 647px !important;
+  }
 
   .enemy-log {
     top: 500px;

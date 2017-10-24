@@ -19,7 +19,7 @@
     height: 517px;
     left: 122px;
     background: url('../assets/walk.png') left center;
-    animation: play 0.8s steps(10) infinite;
+    animation: walk 0.8s steps(10) infinite;
 }
 
 .standing-right {
@@ -35,7 +35,7 @@
     width: 598px;
     height: 610px;
     background: url('../assets/dead.png');
-    animation: die_anim 1.8s steps(9);
+    animation: die_anim 1.4s steps(9);
 }
 .dead {
     background-position: -5382px;
@@ -44,14 +44,14 @@
     width: 417px;
     height: 546px;
     background: url('../assets/jump.png') left center;
-    animation: jump 1.6s steps(10);
+    animation: jump 1s steps(10);
 }
 .slide {
     top: 380px;
     width: 404px;
     height: 399px;
     background: url('../assets/slide.png') left center;
-    animation: slide 0.5s steps(10);
+    animation: slide 0.5s steps(10), slideForward 1.5s ease;
 }
 
 .erase {
@@ -59,6 +59,12 @@
     animation-timing-function:linear;
     animation-fill-mode:forwards;
     animation-iteration-count: 1;
+}
+
+
+@keyframes slideForward {
+    50% { left: 180px }
+    100% { left: 140px }
 }
 
 @keyframes erase {
@@ -71,7 +77,7 @@
 @keyframes die_anim {
     100% { background-position: -5382px; }
 }
-@keyframes play {
+@keyframes walk {
     100% { background-position: -4250px; }
 }
 @keyframes jump {
