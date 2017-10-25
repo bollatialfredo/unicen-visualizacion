@@ -2,89 +2,98 @@
 <html>
 
 <head>
-    <meta charset="utf-8">
-    <title>Night Cowboy</title>
-    <link href="css/bootstrap.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/main.css" media="screen" title="no title" charset="utf-8">
-    <link rel="stylesheet" href="css/background.css">
-    <link rel="stylesheet" href="css/player.css">
-    <link rel="stylesheet" href="css/enemy-static.css" media="screen" title="no title" charset="utf-8">
-    <link rel="icon" href="assets/misc/hat.png">
+  <meta charset="utf-8">
+  <title>Night Cowboy</title>
+  <link href="css/bootstrap.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css" media="screen" title="no title" charset="utf-8">
+  <link rel="stylesheet" href="css/background.css">
+  <link rel="stylesheet" href="css/player.css">
+  <link rel="stylesheet" href="css/UI.css" media="screen" title="no title" charset="utf-8">
+  <link rel="stylesheet" href="css/enemy-static.css" media="screen" title="no title" charset="utf-8">
+  <link rel="icon" href="assets/misc/hat.png">
 </head>
 
 <body>
-    <div id="pre-game">
-        <img class="spin-hat" src="assets/misc/cowboy-hat.png" alt="">
-        Night Cowboy
-        <div class="row">
-            
-                <div class="col-xs-3 col-xs-offset-2">
-                  <div id="timer" class="xs-md-12">
-                        <div class="container">
-                            <span id="minutes"></span><span id="seconds"></span>
-                    </div>
-                  </div>
-              </div>
-                <div class="col-xs-2">
-                        <div id="formJugar" class="form-group myinput">
-                            <button class="btn" id="play-btn">JUGAR</button>
-                        </div>
-                    </div>
-            </div>
-        <div class="row">
+  <div id="pre-game">
+    <img class="spin-hat" src="assets/misc/cowboy-hat.png" alt="">
+    Night Cowboy
+    <div class="row">
 
-        </div>
-        <img class="pre-load" src="assets/walk.png" alt="">
-        <img class="pre-load" src="assets/dead.png" alt="">
-        <img class="pre-load" src="assets/jump.png" alt="">
-        <img class="pre-load" src="assets/slide.png" alt="">
+      <div class="col-xs-3 col-xs-offset-2">
+      </div>
+      <div class="col-xs-2">
+        <button class="btn" id="play-btn">JUGAR</button>
+      </div>
+    </div>
+    <img class="pre-load" src="assets/walk.png" alt="">
+    <img class="pre-load" src="assets/dead.png" alt="">
+    <img class="pre-load" src="assets/jump.png" alt="">
+    <img class="pre-load" src="assets/slide.png" alt="">
 
-        <img class="pre-load" src="assets/background/layer_07_s.png" alt="">
-        <img class="pre-load" src="assets/background/layer_06_s.png" alt="">
-        <img class="pre-load" src="assets/background/layer_05_s.png" alt="">
-        <img class="pre-load" src="assets/background/layer_04_s.png" alt="">
-        <img class="pre-load" src="assets/background/layer_03_s.png" alt="">
-        <img class="pre-load" src="assets/background/layer_02_s.png" alt="">
-        <img class="pre-load" src="assets/background/layer_01_s.png" alt="">
+    <img class="pre-load" src="assets/background/layer_07_s.png" alt="">
+    <img class="pre-load" src="assets/background/layer_06_s.png" alt="">
+    <img class="pre-load" src="assets/background/layer_05_s.png" alt="">
+    <img class="pre-load" src="assets/background/layer_04_s.png" alt="">
+    <img class="pre-load" src="assets/background/layer_03_s.png" alt="">
+    <img class="pre-load" src="assets/background/layer_02_s.png" alt="">
+    <img class="pre-load" src="assets/background/layer_01_s.png" alt="">
 
+  </div>
+  <div id="black-cover">
+
+  </div>
+
+  <div id="after-game" class="row">
+    <div class="col-xs-3 col-xs-offset-2">
+    </div>
+    <div class="col-xs-2">
+      <div id="play-again-txt" class="row">
+        <span>
+          Perdiste...
+        </span>
+      </div>
+      <button class="btn" id="play-again-btn">JUGAR DE NUEVO</button>
+    </div>
+  </div>
+  <div id="game-background" class="game-background">
+    <div class="cover-left"></div>
+    <div class="background layer-7"></div>
+    <div class="background layer-6"></div>
+    <div class="background layer-5"></div>
+    <div class="background layer-4"></div>
+    <div class="background layer-3"></div>
+    <div class="background layer-2"></div>
+    <div class="background layer-1"></div>
+    <div id="player" class="idle">
+    </div>
+    <div id="enemy-log1" class="enemy-log enemy">
+
+    </div>
+    <div id="enemy-log2" class="enemy-log enemy">
+
+    </div>
+    <div id="enemy-bat" class="enemy-bat enemy-anim enemy">
+
+    </div>
+    <div id="instructions">
+      <span class="instruction-action">Esquiva a los enemigos</span>
+      <br>
+      <span class="instruction-action">Correr: </span>Derecha
+      <br>
+      <span class="instruction-action">Parar: </span>Izquierda
+      <br>
+      <span class="instruction-action">Saltar: </span>Arriba
+      <br>
+      <span class="instruction-action">Deslizarse: </span>Abajo
+      <br>
     </div>
     <div id="info-panel">
-        <span id="points"> Points: </span>
+      <span class="points">Puntos:
+        <span id="points"></span>
+      </span>
     </div>
-    <div id="game-background" class="game-background">
-            <div class="cover-left"></div>
-        <div class="background layer-7"></div>
-        <div class="background layer-6"></div>
-        <div class="background layer-5"></div>
-        <div class="background layer-4"></div>
-        <div class="background layer-3"></div>
-        <div class="background layer-2"></div>
-        <div class="background layer-1"></div>
-        <div id="player" class="idle">
-        </div>
-        <div id="enemy-log1" class="enemy-log enemy">
-
-        </div>
-        <div id="enemy-log2" class="enemy-log enemy">
-
-        </div>
-        <div id="enemy-bat" class="enemy-bat enemy-anim enemy">
-
-        </div>
-        <div id="instructions">
-            <span class="instruction-action">Esquiva a los enemigos</span>
-            <br>
-            <span class="instruction-action">Correr: </span>Derecha
-            <br>
-            <span class="instruction-action">Parar: </span>Izquierda
-            <br>
-            <span class="instruction-action">Saltar: </span>Arriba
-            <br>
-            <span class="instruction-action">Deslizarse: </span>Abajo
-            <br>            
-        </div>
-        <div class="cover-right"></div>
-    </div>
+    <div class="cover-right"></div>
+  </div>
 </body>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <script src="js/user-input.js" charset="utf-8"></script>
