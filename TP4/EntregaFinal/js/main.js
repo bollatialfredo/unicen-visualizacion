@@ -37,9 +37,14 @@ function update() {
   }, 100);
 }
 
-function addPoint () {
-  if (gameMovement) { 
-    points ++;
+function addPoint (enemy) {
+  if (!enemy.counted && !player.dead) { 
+    enemy.counted = true;
+    // if (enemy = 'enemy-bat') {
+    //   points += 25;  
+    // }else{
+      // }
+        points += 15;
     pointsElement[0].innerHTML = 'Points: ' + points;
   }
 }

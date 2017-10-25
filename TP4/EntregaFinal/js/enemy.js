@@ -23,8 +23,12 @@ var enemyLog2 = $('#enemy-log2');
 var enemyBat = $('#enemy-bat');
 
 function initEnemy(enemy) {
+  enemy.counted = false;
+  enemy[0].addEventListener("animationend", function () {
+    addPoint(enemy);
+  });
   if (enemy[0].offsetLeft == 736 || enemy[0].offsetLeft == 902) {
-    addPoint();
+    
     enemy.removeClass('enemy');
     enemy.removeClass('enemy-anim');
     setTimeout(function(){
@@ -35,6 +39,8 @@ function initEnemy(enemy) {
     },100)
   }
 }
+
+initEnemy(enemyBat);
 
 setInterval(function() {
   enemiesIntervals();

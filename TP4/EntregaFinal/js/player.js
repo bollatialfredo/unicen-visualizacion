@@ -1,10 +1,10 @@
 var player = $('#player');
 
 function die() {
-  backgroundMoving(false);
-  enemiesMoving(false);
   allowedInput = false;
   player.dead = true;
+  backgroundMoving(false);
+  enemiesMoving(false);
   player.removeClass('slide');
   player.removeClass('walk');
   player.removeClass('jump');

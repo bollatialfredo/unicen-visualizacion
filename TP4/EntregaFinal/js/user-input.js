@@ -27,10 +27,6 @@ $(document).keydown(function (e) {
         player.removeClass('standing-right');
         backgroundMoving(true);
         enemiesMoving(true);
-        if (points == 0) {
-          points = 2;
-          pointsElement[0].innerHTML = 'Points: ' + points;
-        }
       }
       break;
 
