@@ -1,49 +1,45 @@
 
-var allowedInput = true;
+var allowedInput = false;
+var instructions = $('#instructions');
 
-// function imagePreload() {
-//     var walk = new Image();
-//     walk.src = 'assets/walk.png';
-//     var die = new Image();
-//     die.src = 'assets/dead.png';
-//     var jump = new Image();
-//     die.src = 'assets/jump.png';
-//     var slide = new Image();
-//     die.src = 'assets/slide.png';
-// }
-// imagePreload();
-
-$(document).keydown(function(e) {
-  switch(e.which) {
+$(document).keydown(function (e) {
+  switch (e.which) {
     case 37: // left
-    player.addClass('standing-right');
-    player.removeClass('walk');
-    backgroundMoving(false);
-    enemiesMoving(false);
-    break;
+      if (allowedInput) {
+        player.addClass('standing-right');
+        player.removeClass('walk');
+        backgroundMoving(false);
+        enemiesMoving(false);
+      }
+      break;
 
     case 38: // up
-    if (allowedInput) {
-      allowedInput = false;
-      jump();
-    }
-    break;
+      if (allowedInput) {
+        allowedInput = false;
+        jump();
+      }
+      break;
 
     case 39: // right
-    if (allowedInput) {
-      player.addClass('walk');
-      player.removeClass('standing-right');
-      backgroundMoving(true);
-      enemiesMoving(true);
-    }
-    break;
+      if (allowedInput) {
+        instructions.addClass('erase-instructions');
+        player.addClass('walk');
+        player.removeClass('standing-right');
+        backgroundMoving(true);
+        enemiesMoving(true);
+        if (points == 0) {
+          points = 2;
+          pointsElement[0].innerHTML = 'Points: ' + points;
+        }
+      }
+      break;
 
     case 40: // down
-    if (allowedInput) {
-      allowedInput = false;
-      slide();
-    }
-    break;
+      if (allowedInput) {
+        allowedInput = false;
+        slide();
+      }
+      break;
 
     default: return; // exit this handler for other keys
   }

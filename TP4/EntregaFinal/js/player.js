@@ -1,10 +1,10 @@
 var player = $('#player');
 
 function die() {
-  allowedInput = false;
-  player.dead = true;
   backgroundMoving(false);
   enemiesMoving(false);
+  allowedInput = false;
+  player.dead = true;
   player.removeClass('slide');
   player.removeClass('walk');
   player.removeClass('jump');
@@ -18,21 +18,19 @@ function die() {
 function jump() {
   player.addClass('jump');
   player[0].addEventListener("animationend", function () {
-    allowedInput = true;
+    if (!player.dead) { 
+      allowedInput = true;
+    }
     player.removeClass('jump');
   });
-  setTimeout(function () {
-    console.log(player[0].offsetTop);
-  }, 400);
 }
 
 function slide() {
   player.addClass('slide');
   player[0].addEventListener("animationend", function () {
-    allowedInput = true;
-    player.removeClass('slide');
+    if (!player.dead) { 
+      allowedInput = true;
+    }
+      player.removeClass('slide');
   });
-  setTimeout(function () {
-    console.log(player[0].offsetTop);
-  }, 400);
 }

@@ -1,13 +1,22 @@
 var gameElement = $('#game-background');
 var preGame = $('#pre-game');
 var btnPlay = $('#play-btn');
+var infoPanel = $('#info-panel');
+var pointsElement = $('#points');
+var points = 0;
+
+pointsElement[0].innerHTML = 'Points: ' + points;
+
 btnPlay.click(function(){
-  console.log("game start")
   gameElement.show();
   preGame.hide();
+  infoPanel.show();
+  allowedInput = true;
 });
+
 gameElement.hide();
 preGame.show();
+infoPanel.hide();
 
 function update() {
   setInterval(function () {
@@ -26,6 +35,13 @@ function update() {
       }
     }
   }, 100);
+}
+
+function addPoint () {
+  if (gameMovement) { 
+    points ++;
+    pointsElement[0].innerHTML = 'Points: ' + points;
+  }
 }
 
 function getRandomInt(min, max) {

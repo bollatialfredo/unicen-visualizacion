@@ -24,6 +24,7 @@ var enemyBat = $('#enemy-bat');
 
 function initEnemy(enemy) {
   if (enemy[0].offsetLeft == 736 || enemy[0].offsetLeft == 902) {
+    addPoint();
     enemy.removeClass('enemy');
     enemy.removeClass('enemy-anim');
     setTimeout(function(){

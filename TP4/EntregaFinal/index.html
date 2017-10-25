@@ -14,9 +14,10 @@
 
 <body>
     <div id="pre-game">
-        <img src="assets/misc/cowboy-hat.png" alt="">
-        <img src="assets/misc/game-baner.png" alt="">
+        <img class="spin-hat" src="assets/misc/cowboy-hat.png" alt="">
+        Night Cowboy
         <div class="row">
+            
                 <div class="col-xs-3 col-xs-offset-2">
                   <div id="timer" class="xs-md-12">
                         <div class="container">
@@ -25,9 +26,6 @@
                   </div>
               </div>
                 <div class="col-xs-2">
-                    <a id="gps_ring" class="darken">
-                        <img title="Inicio" onclick="restart()" src="assets/logo.png" alt="">
-                    </a>
                         <div id="formJugar" class="form-group myinput">
                             <button class="btn" id="play-btn">JUGAR</button>
                         </div>
@@ -36,9 +34,22 @@
         <div class="row">
 
         </div>
+        <img class="pre-load" src="assets/walk.png" alt="">
+        <img class="pre-load" src="assets/dead.png" alt="">
+        <img class="pre-load" src="assets/jump.png" alt="">
+        <img class="pre-load" src="assets/slide.png" alt="">
+
+        <img class="pre-load" src="assets/background/layer_07_s.png" alt="">
+        <img class="pre-load" src="assets/background/layer_06_s.png" alt="">
+        <img class="pre-load" src="assets/background/layer_05_s.png" alt="">
+        <img class="pre-load" src="assets/background/layer_04_s.png" alt="">
+        <img class="pre-load" src="assets/background/layer_03_s.png" alt="">
+        <img class="pre-load" src="assets/background/layer_02_s.png" alt="">
+        <img class="pre-load" src="assets/background/layer_01_s.png" alt="">
+
     </div>
     <div id="info-panel">
-
+        <span id="points"> Points: </span>
     </div>
     <div id="game-background" class="game-background">
             <div class="cover-left"></div>
@@ -60,7 +71,18 @@
         <div id="enemy-bat" class="enemy-bat enemy-anim">
 
         </div>
-
+        <div id="instructions">
+            <span class="instruction-action">Esquiva a los enemigos</span>
+            <br>
+            <span class="instruction-action">Correr: </span>Derecha
+            <br>
+            <span class="instruction-action">Parar: </span>Izquierda
+            <br>
+            <span class="instruction-action">Saltar: </span>Arriba
+            <br>
+            <span class="instruction-action">Deslizarse: </span>Abajo
+            <br>            
+        </div>
         <div class="cover-right"></div>
     </div>
 </body>
